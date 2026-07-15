@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Client Meeting Rooms — ECCU GenAI Camp 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0A1628;
+  --navy2:#0d1d35;
+  --navy3:#111f38;
+  --teal:#00C9B1;
+  --coral:#E8573A;
+  --gold:#F0A500;
+  --cream:#F5F0E8;
+  --white:#FFFFFF;
+  --gray:#8892A4;
+  --light:#D1D9E6;
+  --font-display:'Bebas Neue',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'Space Mono',monospace;
+}
+html,body{
+  background:var(--navy);
+  color:var(--cream);
+  font-family:var(--font-body);
+  min-height:100vh;
+}
+
+/* ── HEADER ── */
+.site-header{
+  background:var(--navy2);
+  border-bottom:1px solid rgba(0,201,177,0.2);
+  padding:32px 48px 28px;
+}
+.header-eyebrow{
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--teal);
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.header-title{
+  font-family:var(--font-display);
+  font-size:clamp(40px,6vw,72px);
+  color:var(--white);
+  line-height:0.95;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
+.header-title span{color:var(--teal)}
+.header-sub{
+  font-size:14px;
+  color:var(--gray);
+  font-family:var(--font-mono);
+  letter-spacing:0.5px;
+}
+.header-meta{
+  display:flex;
+  gap:24px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+.meta-pill{
+  background:rgba(0,201,177,0.08);
+  border:1px solid rgba(0,201,177,0.2);
+  border-radius:20px;
+  padding:4px 14px;
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:var(--teal);
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* ── GRID ── */
+.grid-wrapper{
+  padding:40px 48px 80px;
+}
+.section-label{
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:2px;
+  color:var(--gray);
+  text-transform:uppercase;
+  margin-bottom:20px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:14px;
+}
+
+/* ── CARD ── */
+.zoom-card{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color 0.2s,transform 0.15s;
+  position:relative;
+  overflow:hidden;
+}
+.zoom-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:var(--card-accent,var(--teal));
+  opacity:0.7;
+}
+.zoom-card:hover{
+  border-color:rgba(255,255,255,0.18);
+  transform:translateY(-2px);
+}
+.card-top{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+}
+.card-flag{
+  font-size:32px;
+  line-height:1;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.card-identity{}
+.card-num{
+  font-family:var(--font-mono);
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--gray);
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.card-name{
+  font-size:15px;
+  font-weight:600;
+  color:var(--white);
+  line-height:1.2;
+  margin-bottom:3px;
+}
+.card-sector{
+  font-family:var(--font-mono);
+  font-size:9px;
+  letter-spacing:1px;
+  color:var(--gray);
+  text-transform:uppercase;
+}
+
+.join-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:1px;
+  font-weight:700;
+  text-transform:uppercase;
+  transition:all 0.15s;
+  border:1px solid;
+}
+.join-btn:hover{opacity:0.85;transform:scale(0.98)}
+.join-btn svg{width:14px;height:14px;flex-shrink:0}
+
+/* ── FOOTER ── */
+.site-footer{
+  text-align:center;
+  padding:24px 48px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  font-family:var(--font-mono);
+  font-size:10px;
+  color:var(--gray);
+  letter-spacing:1px;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-eyebrow">ECCU GenAI & Python Summer Camp 2026</div>
+  <div class="header-title">CLIENT<br><span>MEETING</span><br>ROOMS</div>
+  
+  <div class="header-meta">
+    <span class="meta-pill">Day 3 · Jul 15</span>
+    <span class="meta-pill">Day 8 · Jul 22</span>
+    <span class="meta-pill">Day 13 · Jul 29</span>
+    <span class="meta-pill">Level 1 · Aug 5</span>
+  </div>
+</header>
+
+<div class="grid-wrapper">
+  <div class="section-label">Tap your client's card to join their meeting room</div>
+
+  <div class="cards-grid">
+
+
+    <!-- ── ANTIGUA & BARBUDA ── -->
+    <!-- ACB CARIBBEAN -->
+    <div class="zoom-card" style="--card-accent:#CE1126">
+      <div class="card-top">
+        <div class="card-flag">🇦🇬</div>
+        <div class="card-identity">
+          <div class="card-num">01 · Antigua & Barbuda</div>
+          <div class="card-name">ACB Caribbean</div>
+          <div class="card-sector">Banking</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/89536771475?pwd=ayYbTNVhowdqTJBnfaucVqFbI6x9Y6.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- CARIBBEAN UNION BANK -->
+    <div class="zoom-card" style="--card-accent:#CE1126">
+      <div class="card-top">
+        <div class="card-flag">🇦🇬</div>
+        <div class="card-identity">
+          <div class="card-num">02 · Antigua & Barbuda</div>
+          <div class="card-name">Caribbean Union Bank</div>
+          <div class="card-sector">Banking</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/83490588775?pwd=CtXA39vneHTo3anQlikAuIbe5eYwPB.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- DIGICEL ANTIGUA -->
+    <div class="zoom-card" style="--card-accent:#CE1126">
+      <div class="card-top">
+        <div class="card-flag">🇦🇬</div>
+        <div class="card-identity">
+          <div class="card-num">03 · Antigua & Barbuda</div>
+          <div class="card-name">Digicel Antigua</div>
+          <div class="card-sector">Telecommunications</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/85849433495?pwd=YiUobaV5KI61k6MaE99UaTR2boXRUE.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+
+    <!-- ── DOMINICA ── -->
+    <!-- OUTSOURCE DOMINICA -->
+    <div class="zoom-card" style="--card-accent:#2D6A4F">
+      <div class="card-top">
+        <div class="card-flag">🇩🇲</div>
+        <div class="card-identity">
+          <div class="card-num">04 · Dominica</div>
+          <div class="card-name">Outsource Dominica</div>
+          <div class="card-sector">Consulting</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/81611354900?pwd=ylsqvm3g2MV4Eqnb7atr3Hx0wK1mIG.1" target="_blank" style="background:rgba(45,106,79,0.1);border-color:rgba(45,106,79,0.4);color:#2D6A4F">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+
+    <!-- ── GRENADA ── -->
+    <!-- NAWASA -->
+    <div class="zoom-card" style="--card-accent:#00A651">
+      <div class="card-top">
+        <div class="card-flag">🇬🇩</div>
+        <div class="card-identity">
+          <div class="card-num">05 · Grenada</div>
+          <div class="card-name">NAWASA</div>
+          <div class="card-sector">Water Authority</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/85036082142?pwd=WUJusozpCMaDqvjkp1hYzQOYIlChPI.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- IRD GRENADA -->
+    <div class="zoom-card" style="--card-accent:#00A651">
+      <div class="card-top">
+        <div class="card-flag">🇬🇩</div>
+        <div class="card-identity">
+          <div class="card-num">06 · Grenada</div>
+          <div class="card-name">IRD Grenada</div>
+          <div class="card-sector">Tax Authority · Government</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/81041523153?pwd=HbUrqm7u3vO3jTP1nrlHceaq6aZFB0.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- NIS GRENADA -->
+    <div class="zoom-card" style="--card-accent:#00A651">
+      <div class="card-top">
+        <div class="card-flag">🇬🇩</div>
+        <div class="card-identity">
+          <div class="card-num">07 · Grenada</div>
+          <div class="card-name">NIS Grenada</div>
+          <div class="card-sector">Social Security</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/87350745574?pwd=cWLSA6SSXkVybeToC1QiiSLCjkUKRf.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+
+    <!-- ── SAINT LUCIA ── -->
+    <!-- SAGICOR -->
+    <div class="zoom-card" style="--card-accent:#65CFFF">
+      <div class="card-top">
+        <div class="card-flag">🇱🇨</div>
+        <div class="card-identity">
+          <div class="card-num">08 · Saint Lucia</div>
+          <div class="card-name">Sagicor Finance</div>
+          <div class="card-sector">Non-Bank Financial</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/82698221501?pwd=Y09tdrAOxnDAQuqjBazlDppO78E27T.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- BANK OF ST LUCIA -->
+    <div class="zoom-card" style="--card-accent:#65CFFF">
+      <div class="card-top">
+        <div class="card-flag">🇱🇨</div>
+        <div class="card-identity">
+          <div class="card-num">09 · Saint Lucia</div>
+          <div class="card-name">Bank of St. Lucia</div>
+          <div class="card-sector">Banking & Finance</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/82848457483?pwd=vgl1wyTZTVU7uU1joMgQbaTdnNi4ps.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- LUCELEC -->
+    <div class="zoom-card" style="--card-accent:#65CFFF">
+      <div class="card-top">
+        <div class="card-flag">🇱🇨</div>
+        <div class="card-identity">
+          <div class="card-num">10 · Saint Lucia</div>
+          <div class="card-name">LUCELEC</div>
+          <div class="card-sector">Electricity Utility</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/83884332520?pwd=6LfkI1mOkNBZgtbarxPfXrKRpbAUoY.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+
+    <!-- ── ST. KITTS & NEVIS ── -->
+    <!-- ECCB -->
+    <div class="zoom-card" style="--card-accent:#FFD100">
+      <div class="card-top">
+        <div class="card-flag">🇰🇳</div>
+        <div class="card-identity">
+          <div class="card-num">11 · St. Kitts & Nevis</div>
+          <div class="card-name">ECCB / Credit Bureau</div>
+          <div class="card-sector">Central Bank · Financial</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/87456111817?pwd=VyK7A4Ic8Ov9bQih04ZnA13qawOEck.1" target="_blank" style="background:rgba(255,209,0,0.1);border-color:rgba(255,209,0,0.5);color:#FFD100">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+    <!-- SCASPA -->
+    <div class="zoom-card" style="--card-accent:#FFD100">
+      <div class="card-top">
+        <div class="card-flag">🇰🇳</div>
+        <div class="card-identity">
+          <div class="card-num">12 · St. Kitts & Nevis</div>
+          <div class="card-name">SCASPA</div>
+          <div class="card-sector">Air & Sea Ports Authority</div>
+        </div>
+      </div>
+      <a class="join-btn" href="https://us06web.zoom.us/j/81732478217?pwd=WkI8xCXHZhfkcnLPCm94RIoggJWxzD.1" target="_blank" style="background:rgba(255,209,0,0.1);border-color:rgba(255,209,0,0.5);color:#FFD100">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+        Join meeting
+      </a>
+    </div>
+
+<footer class="site-footer">
+  ECCU GenAI & Python Summer Camp 2026
+</footer>
+
+</body>
+</html>
