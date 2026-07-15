@@ -108,6 +108,7 @@ html,body{
   transition:border-color 0.2s,transform 0.15s;
   position:relative;
   overflow:hidden;
+  cursor:pointer;
 }
 .zoom-card::before{
   content:'';
@@ -185,6 +186,17 @@ html,body{
   color:var(--gray);
   letter-spacing:1px;
 }
+
+.join-label{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 16px;border-radius:8px;border:1px solid;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:1px;
+  font-weight:700;text-transform:uppercase;
+  color:var(--card-accent,#00C9B1);
+  border-color:color-mix(in srgb, var(--card-accent,#00C9B1) 40%, transparent);
+  background:color-mix(in srgb, var(--card-accent,#00C9B1) 10%, transparent);
+  pointer-events:none;
+}
 </style>
 </head>
 <body>
@@ -209,7 +221,7 @@ html,body{
 
     <!-- ── ANTIGUA & BARBUDA ── -->
     <!-- ACB CARIBBEAN -->
-    <div class="zoom-card" style="--card-accent:#CE1126">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/89536771475?pwd=ayYbTNVhowdqTJBnfaucVqFbI6x9Y6.1" target="_blank" style="--card-accent:#CE1126;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇦🇬</div>
         <div class="card-identity">
@@ -218,14 +230,14 @@ html,body{
           <div class="card-sector">Banking</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/89536771475?pwd=ayYbTNVhowdqTJBnfaucVqFbI6x9Y6.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- CARIBBEAN UNION BANK -->
-    <div class="zoom-card" style="--card-accent:#CE1126">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/83490588775?pwd=CtXA39vneHTo3anQlikAuIbe5eYwPB.1" target="_blank" style="--card-accent:#CE1126;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇦🇬</div>
         <div class="card-identity">
@@ -234,14 +246,14 @@ html,body{
           <div class="card-sector">Banking</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/83490588775?pwd=CtXA39vneHTo3anQlikAuIbe5eYwPB.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- DIGICEL ANTIGUA -->
-    <div class="zoom-card" style="--card-accent:#CE1126">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/85849433495?pwd=YiUobaV5KI61k6MaE99UaTR2boXRUE.1" target="_blank" style="--card-accent:#CE1126;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇦🇬</div>
         <div class="card-identity">
@@ -250,16 +262,16 @@ html,body{
           <div class="card-sector">Telecommunications</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/85849433495?pwd=YiUobaV5KI61k6MaE99UaTR2boXRUE.1" target="_blank" style="background:rgba(206,17,38,0.1);border-color:rgba(206,17,38,0.4);color:#CE1126">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
 
     <!-- ── DOMINICA ── -->
     <!-- OUTSOURCE DOMINICA -->
-    <div class="zoom-card" style="--card-accent:#2D6A4F">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/81611354900?pwd=ylsqvm3g2MV4Eqnb7atr3Hx0wK1mIG.1" target="_blank" style="--card-accent:#2D6A4F;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇩🇲</div>
         <div class="card-identity">
@@ -268,16 +280,16 @@ html,body{
           <div class="card-sector">Consulting</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/81611354900?pwd=ylsqvm3g2MV4Eqnb7atr3Hx0wK1mIG.1" target="_blank" style="background:rgba(45,106,79,0.1);border-color:rgba(45,106,79,0.4);color:#2D6A4F">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
 
     <!-- ── GRENADA ── -->
     <!-- NAWASA -->
-    <div class="zoom-card" style="--card-accent:#00A651">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/85036082142?pwd=WUJusozpCMaDqvjkp1hYzQOYIlChPI.1" target="_blank" style="--card-accent:#00A651;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇬🇩</div>
         <div class="card-identity">
@@ -286,14 +298,14 @@ html,body{
           <div class="card-sector">Water Authority</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/85036082142?pwd=WUJusozpCMaDqvjkp1hYzQOYIlChPI.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- IRD GRENADA -->
-    <div class="zoom-card" style="--card-accent:#00A651">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/81041523153?pwd=HbUrqm7u3vO3jTP1nrlHceaq6aZFB0.1" target="_blank" style="--card-accent:#00A651;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇬🇩</div>
         <div class="card-identity">
@@ -302,14 +314,14 @@ html,body{
           <div class="card-sector">Tax Authority · Government</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/81041523153?pwd=HbUrqm7u3vO3jTP1nrlHceaq6aZFB0.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- NIS GRENADA -->
-    <div class="zoom-card" style="--card-accent:#00A651">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/87350745574?pwd=cWLSA6SSXkVybeToC1QiiSLCjkUKRf.1" target="_blank" style="--card-accent:#00A651;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇬🇩</div>
         <div class="card-identity">
@@ -318,16 +330,16 @@ html,body{
           <div class="card-sector">Social Security</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/87350745574?pwd=cWLSA6SSXkVybeToC1QiiSLCjkUKRf.1" target="_blank" style="background:rgba(0,166,81,0.1);border-color:rgba(0,166,81,0.4);color:#00A651">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
 
     <!-- ── SAINT LUCIA ── -->
     <!-- SAGICOR -->
-    <div class="zoom-card" style="--card-accent:#65CFFF">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/82698221501?pwd=Y09tdrAOxnDAQuqjBazlDppO78E27T.1" target="_blank" style="--card-accent:#65CFFF;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇱🇨</div>
         <div class="card-identity">
@@ -336,14 +348,14 @@ html,body{
           <div class="card-sector">Non-Bank Financial</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/82698221501?pwd=Y09tdrAOxnDAQuqjBazlDppO78E27T.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- BANK OF ST LUCIA -->
-    <div class="zoom-card" style="--card-accent:#65CFFF">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/82848457483?pwd=vgl1wyTZTVU7uU1joMgQbaTdnNi4ps.1" target="_blank" style="--card-accent:#65CFFF;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇱🇨</div>
         <div class="card-identity">
@@ -352,14 +364,14 @@ html,body{
           <div class="card-sector">Banking & Finance</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/82848457483?pwd=vgl1wyTZTVU7uU1joMgQbaTdnNi4ps.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- LUCELEC -->
-    <div class="zoom-card" style="--card-accent:#65CFFF">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/83884332520?pwd=6LfkI1mOkNBZgtbarxPfXrKRpbAUoY.1" target="_blank" style="--card-accent:#65CFFF;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇱🇨</div>
         <div class="card-identity">
@@ -368,16 +380,16 @@ html,body{
           <div class="card-sector">Electricity Utility</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/83884332520?pwd=6LfkI1mOkNBZgtbarxPfXrKRpbAUoY.1" target="_blank" style="background:rgba(101,207,255,0.1);border-color:rgba(101,207,255,0.5);color:#65CFFF">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
 
     <!-- ── ST. KITTS & NEVIS ── -->
     <!-- ECCB -->
-    <div class="zoom-card" style="--card-accent:#FFD100">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/87456111817?pwd=VyK7A4Ic8Ov9bQih04ZnA13qawOEck.1" target="_blank" style="--card-accent:#FFD100;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇰🇳</div>
         <div class="card-identity">
@@ -386,14 +398,14 @@ html,body{
           <div class="card-sector">Central Bank · Financial</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/87456111817?pwd=VyK7A4Ic8Ov9bQih04ZnA13qawOEck.1" target="_blank" style="background:rgba(255,209,0,0.1);border-color:rgba(255,209,0,0.5);color:#FFD100">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
     <!-- SCASPA -->
-    <div class="zoom-card" style="--card-accent:#FFD100">
+    <a class="zoom-card" href="https://us06web.zoom.us/j/81732478217?pwd=WkI8xCXHZhfkcnLPCm94RIoggJWxzD.1" target="_blank" style="--card-accent:#FFD100;text-decoration:none">
       <div class="card-top">
         <div class="card-flag">🇰🇳</div>
         <div class="card-identity">
@@ -402,11 +414,11 @@ html,body{
           <div class="card-sector">Air & Sea Ports Authority</div>
         </div>
       </div>
-      <a class="join-btn" href="https://us06web.zoom.us/j/81732478217?pwd=WkI8xCXHZhfkcnLPCm94RIoggJWxzD.1" target="_blank" style="background:rgba(255,209,0,0.1);border-color:rgba(255,209,0,0.5);color:#FFD100">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          <div class="join-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M15 10l4.553-2.069A1 1 0 0121 8.845v6.31a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
         Join meeting
-      </a>
-    </div>
+      </div>
+    </a>
 
 <footer class="site-footer">
   ECCU GenAI & Python Summer Camp 2026
